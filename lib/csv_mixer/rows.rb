@@ -9,6 +9,7 @@ require 'set'
 class CsvMixer::Rows
   def initialize(file_names=[], resultant)
     @file_names = file_names
+    @operands   = @file_names.map { |f| CsvMixer::Operand.new(f) }
     @resultant  = resultant
   end
 
